@@ -10,164 +10,118 @@
       background-color: #000;
       border: 10px solid #39ff14;
       box-shadow: 0 0 40px #39ff14 inset;
-      scroll-behavior: smooth;
     }
     .glow-text {
       text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-    }
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #39ff14;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      box-shadow: 0 0 10px #39ff14;
-      z-index: 9999;
-      animation: fadeout 3s forwards;
-    }
-    @keyframes fadeout {
-      0% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { opacity: 0; }
     }
   </style>
 </head>
 <body class="text-white font-sans">
 
-  <!-- Sticky Header -->
-  <header class="sticky top-0 bg-black bg-opacity-90 z-50 text-center py-6">
-    <h1 class="text-5xl font-bold glow-text">Go Figure Go</h1>
-    <p class="mt-2 text-lg max-w-2xl mx-auto">Do the Impossible, go figure. NYC streetwear built for movement, culture, and impact.</p>
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-6xl font-bold glow-text">Go Figure Go</h1>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">
+      Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
+    </p>
+    <button class="mt-6 px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Explore Collection</button>
   </header>
 
-  <!-- Countdown -->
+  <!-- Coming Soon -->
   <section class="text-center py-10">
-    <h2 class="text-4xl font-bold glow-text">Next Drop Countdown</h2>
-    <p class="mt-2 text-lg">Get ready for the next release</p>
-    <div id="countdown" class="mt-4 text-5xl font-mono glow-text">Loading...</div>
+    <h2 class="text-4xl font-bold glow-text">Next Drop</h2>
+    <p class="mt-2 text-lg">Coming Soon</p>
+  </section>
+
+  <!-- Black Lives Matter -->
+  <section class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold">✊🏽 Black Lives Matter</h2>
+    <p class="mt-4 max-w-2xl mx-auto">
+      Go Figure Go stands in solidarity with the movement for justice, equality, and empowerment. Our designs honor the legacy of Black leaders and the resilience of our communities.
+    </p>
+    <div class="mt-6 flex justify-center gap-4">
+      <span class="px-4 py-2 bg-red-600 rounded-full font-bold">Justice</span>
+      <span class="px-4 py-2 bg-green-600 rounded-full font-bold">Unity</span>
+      <span class="px-4 py-2 bg-yellow-400 rounded-full font-bold">Power</span>
+    </div>
   </section>
 
   <!-- Product Grid -->
   <section class="py-10 text-center">
     <h2 class="text-4xl font-bold glow-text mb-8">Streetwear Collection</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-      <!-- Product Card Template -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70 hover:scale-105 transition transform duration-300">
+      <!-- Hoodie -->
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
         <h3 class="text-xl font-bold mb-2">Go Figure Hoodie</h3>
         <p class="mb-4">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
         <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
+        <button onclick="addToCart('Go Figure Hoodie')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
 
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70 hover:scale-105 transition transform duration-300">
+      <!-- MLK Long Sleeve -->
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
         <h3 class="text-xl font-bold mb-2">MLK Long Sleeve</h3>
         <p class="mb-4">From our Black History Collection. Collab with Kate B & MLK Jr.</p>
         <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
+        <button onclick="addToCart('MLK Long Sleeve')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
 
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70 hover:scale-105 transition transform duration-300">
+      <!-- Go Figure Tee -->
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
         <h3 class="text-xl font-bold mb-2">Go Figure Tee</h3>
         <p class="mb-4">Off-white streetwear tee with signature patch and minimal design.</p>
         <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
+        <button onclick="addToCart('Go Figure Tee')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
     </div>
   </section>
 
-  <!-- Cart Sidebar -->
-  <div id="cartSidebar" class="fixed right-0 top-0 h-full w-64 bg-black text-white border-l border-green-400 p-4 overflow-y-auto z-40">
-    <h2 class="text-xl font-bold mb-4">Your Cart</h2>
-    <div id="cartItems"></div>
+  <!-- Cart Section -->
+  <section class="py-10 text-center bg-black bg-opacity-80">
+    <h2 class="text-3xl font-bold glow-text mb-4">Your Cart</h2>
+    <div id="cartDisplay" class="max-w-xl mx-auto text-left"></div>
     <p id="cartTotal" class="mt-4 font-bold">Total Items: 0</p>
-    <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Checkout</button>
-  </div>
+    <button class="mt-4 px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Checkout</button>
+  </section>
 
-  <!-- Toast Container -->
-  <div id="toastContainer"></div>
-
-  <!-- Countdown Script -->
-  <script>
-    function startCountdown(targetDate) {
-      const countdownEl = document.getElementById('countdown');
-      function update() {
-        const now = new Date();
-        const diff = targetDate - now;
-        if (diff <= 0) {
-          countdownEl.textContent = "00:00:00:00";
-          return;
-        }
-        const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-        const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-        const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
-        const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-        countdownEl.textContent = `${days}:${hours}:${minutes}:${seconds}`;
-      }
-      update();
-      setInterval(update, 1000);
-    }
-    startCountdown(new Date("2025-08-25T00:00:00"));
-  </script>
-
-  <!-- Cart Logic -->
+  <!-- Cart Script -->
   <script>
     const cart = {};
-    const cartItemsEl = document.getElementById('cartItems');
-    const cartTotalEl = document.getElementById('cartTotal');
-    const toastContainer = document.getElementById('toastContainer');
-
-    function showToast(message) {
-      const toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.textContent = message;
-      toastContainer.appendChild(toast);
-      setTimeout(() => toast.remove(), 3000);
-    }
-
-    function updateCartUI() {
-      cartItemsEl.innerHTML = '';
-      let totalItems = 0;
-      for (const [item, qty] of Object.entries(cart)) {
-        totalItems += qty;
-        const itemEl = document.createElement('div');
-        itemEl.className = 'mb-4';
-        itemEl.innerHTML = `
-          <p class="font-bold">${item}</p>
-          <p>Qty: ${qty}</p>
-          <button onclick="removeFromCart('${item}')" class="mt-1 px-2 py-1 bg-red-600 text-white rounded">Remove</button>
-        `;
-        cartItemsEl.appendChild(itemEl);
-      }
-      cartTotalEl.textContent = `Total Items: ${totalItems}`;
-    }
-
-    function addToCart(itemName, inputEl) {
-      const qty = parseInt(inputEl.value);
+    function addToCart(itemName) {
+      const input = event.target.parentElement.querySelector('input');
+      const qty = parseInt(input.value);
       if (!qty || qty < 1) return;
       cart[itemName] = (cart[itemName] || 0) + qty;
       updateCartUI();
-      showToast(`${itemName} added to cart`);
     }
 
     function removeFromCart(itemName) {
       delete cart[itemName];
       updateCartUI();
-      showToast(`${itemName} removed`);
     }
 
-    document.querySelectorAll('button').forEach(btn => {
-      if (btn.textContent.includes('Add to Cart')) {
-        btn.addEventListener('click', () => {
-          const itemName = btn.parentElement.querySelector('h3').textContent;
-          const inputEl = btn.parentElement.querySelector('input');
-          addToCart(itemName, inputEl);
-        });
+    function updateCartUI() {
+      const cartDisplay = document.getElementById('cartDisplay');
+      const cartTotal = document.getElementById('cartTotal');
+      cartDisplay.innerHTML = '';
+      let total = 0;
+      for (const [item, qty] of Object.entries(cart)) {
+        total += qty;
+        cartDisplay.innerHTML += `
+          <div class="mb-4 border-b border-green-400 pb-2">
+            <p class="font-bold">${item}</p>
+            <p>Qty: ${qty}</p>
+            <button onclick="removeFromCart('${item}')" class="mt-1 px-2 py-1 bg-red-600 text-white rounded">Remove</button>
+          </div>
+        `;
       }
-    });
+      cartTotal.textContent = 'Total Items: ' + total;
+    }
   </script>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white bg-black bg-opacity-80">
+    &copy; 2025 Go Figure Go. All rights reserved.
+  </footer>
 </body>
 </html>
-
