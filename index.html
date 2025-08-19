@@ -9,7 +9,7 @@
 <body class="bg-black text-green-400 font-sans scroll-smooth">
 
   <!-- Cover Section -->
-  <section class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-6" style="background-image: url('Uv73fiJF9s7Mani3mWLER.jpeg');">
+  <section class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-6" style="background-image: url('/images/Uv73fiJF9s7Mani3mWLER.jpeg');">
     <div class="bg-black bg-opacity-60 p-6 rounded">
       <h1 class="text-5xl font-bold mb-4">Go Figure Go</h1>
       <p class="text-lg max-w-xl mb-6">
@@ -25,24 +25,27 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Hoodie -->
       <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="KgCtJg64Yh1JhxxiUx7GJ.jpeg" alt="Go Figure Hoodie" class="w-full h-64 object-cover mb-4 rounded" />
+        <img src="/images/KgCtJg64Yh1JhxxiUx7GJ.jpeg" alt="Go Figure Hoodie" class="w-full h-64 object-cover mb-4 rounded" />
         <h3 class="text-xl font-semibold mb-2">Go Figure Hoodie</h3>
         <p class="text-sm mb-4">Premium cotton hoodie designed for comfort and statement. Inner-city inspired, built for movement.</p>
-        <button onclick="addToCart('Go Figure Hoodie')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-hoodie" />
+        <button onclick="addToCart('Go Figure Hoodie', 'qty-hoodie')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
       </div>
       <!-- MLK Long Sleeve -->
       <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="47UdYgKJWjMyHsMpVC2gQ.jpeg" alt="MLK Long Sleeve" class="w-full h-64 object-cover mb-4 rounded" />
+        <img src="/images/47UdYgKJWjMyHsMpVC2gQ.jpeg" alt="MLK Long Sleeve" class="w-full h-64 object-cover mb-4 rounded" />
         <h3 class="text-xl font-semibold mb-2">MLK Long Sleeve</h3>
         <p class="text-sm mb-4">From the Black History Collection. Featuring Martin Luther King Jr. in collaboration with Kate B.</p>
-        <button onclick="addToCart('MLK Long Sleeve')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-mlk" />
+        <button onclick="addToCart('MLK Long Sleeve', 'qty-mlk')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
       </div>
       <!-- Tee -->
       <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="hFDMFLjFat28ygx15v3a1.png" alt="Go Figure Tee" class="w-full h-64 object-cover mb-4 rounded" />
+        <img src="/images/hFDMFLjFat28ygx15v3a1.png" alt="Go Figure Tee" class="w-full h-64 object-cover mb-4 rounded" />
         <h3 class="text-xl font-semibold mb-2">Go Figure Tee</h3>
         <p class="text-sm mb-4">Off-white streetwear tee with signature patch. Minimal design, maximum impact.</p>
-        <button onclick="addToCart('Go Figure Tee')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-tee" />
+        <button onclick="addToCart('Go Figure Tee', 'qty-tee')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
       </div>
     </div>
   </section>
@@ -72,7 +75,9 @@
   <!-- Cart Sidebar -->
   <div id="cart" class="fixed bottom-4 right-4 bg-black text-green-400 p-4 rounded shadow-lg max-w-xs w-full">
     <h4 class="font-bold mb-2">Your Cart</h4>
-    <ul id="cart-items" class="text-sm list-disc pl-4"></ul>
+    <ul id="cart-items" class="text-sm list-disc pl-4 mb-2"></ul>
+    <p class="text-sm font-semibold">Total Items: <span id="cart-total">0</span></p>
+    <button onclick="checkout()" class="mt-4 w-full bg-green-400 text-black py-2 rounded hover:bg-green-300 transition">Checkout</button>
   </div>
 
   <!-- Footer -->
@@ -83,9 +88,30 @@
   <!-- Cart Script -->
   <script>
     const cartItems = [];
-    function addToCart(item) {
-      cartItems.push(item);
-      document.getElementById('cart-items').innerHTML = cartItems.map(i => `<li>${i}</li>`).join('');
+
+    function addToCart(item, qtyId) {
+      const qty = parseInt(document.getElementById(qtyId).value);
+      for (let i = 0; i < qty; i++) {
+        cartItems.push(item);
+      }
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      cartList.innerHTML = cartItems.map((item, index) =>
+        `<li>${item} <button onclick="removeFromCart(${index})" class="ml-2 text-red-500 hover:underline">Remove</button></li>`
+      ).join('');
+      document.getElementById('cart-total').textContent = cartItems.length;
+    }
+
+    function checkout() {
+      alert("Checkout is coming soon. Stay tuned!");
     }
   </script>
 
