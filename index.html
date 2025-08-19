@@ -14,66 +14,88 @@
     .glow-text {
       text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
     }
+    nav a:hover {
+      color: #39ff14;
+    }
   </style>
 </head>
 <body class="text-white font-sans">
 
-  <!-- Header -->
-  <header class="text-center py-10">
+  <!-- Navigation -->
+  <nav class="flex flex-wrap justify-center gap-6 py-6 text-lg font-bold bg-black bg-opacity-90">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#product-detail">Product Detail</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#movement">The Movement</a>
+    <a href="#journal">Journal</a>
+    <a href="#wholesale">B2B Wholesale</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="text-center py-10">
     <h1 class="text-6xl font-bold glow-text">Go Figure Go</h1>
-    <p class="mt-4 text-lg max-w-2xl mx-auto">
-      Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
-    </p>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">Do the Impossible, go figure. NYC streetwear built for movement, culture, and impact.</p>
     <button class="mt-6 px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Explore Collection</button>
-  </header>
+  </section>
 
   <!-- Coming Soon -->
-  <section class="text-center py-10">
+  <section class="text-center py-10 bg-black bg-opacity-70">
     <h2 class="text-4xl font-bold glow-text">Next Drop</h2>
     <p class="mt-2 text-lg">Coming Soon</p>
   </section>
 
-  <!-- Black Lives Matter -->
-  <section class="text-center py-10 bg-black bg-opacity-70">
-    <h2 class="text-4xl font-bold">✊🏽 Black Lives Matter</h2>
-    <p class="mt-4 max-w-2xl mx-auto">
-      Go Figure Go stands in solidarity with the movement for justice, equality, and empowerment. Our designs honor the legacy of Black leaders and the resilience of our communities.
-    </p>
-    <div class="mt-6 flex justify-center gap-4">
-      <span class="px-4 py-2 bg-red-600 rounded-full font-bold">Justice</span>
-      <span class="px-4 py-2 bg-green-600 rounded-full font-bold">Unity</span>
-      <span class="px-4 py-2 bg-yellow-400 rounded-full font-bold">Power</span>
-    </div>
+  <!-- Shop -->
+  <section id="shop" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Shop</h2>
+    <p class="mt-4">Product listing and filtering will be added here.</p>
   </section>
 
-  <!-- Product Grid -->
-  <section class="py-10 text-center">
-    <h2 class="text-4xl font-bold glow-text mb-8">Streetwear Collection</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-      <!-- Hoodie -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">Go Figure Hoodie</h3>
-        <p class="mb-4">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('Go Figure Hoodie')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
+  <!-- Product Detail -->
+  <section id="product-detail" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">Product Detail</h2>
+    <p class="mt-4">Descriptions, sizing, and reviews go here.</p>
+  </section>
 
-      <!-- MLK Long Sleeve -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">MLK Long Sleeve</h3>
-        <p class="mb-4">From our Black History Collection. Collab with Kate B & MLK Jr.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('MLK Long Sleeve')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
+  <!-- Lookbook -->
+  <section id="lookbook" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Lookbook</h2>
+    <p class="mt-4">Editorial-style photos and styling inspiration.</p>
+  </section>
 
-      <!-- Go Figure Tee -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">Go Figure Tee</h3>
-        <p class="mb-4">Off-white streetwear tee with signature patch and minimal design.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('Go Figure Tee')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
-    </div>
+  <!-- The Movement -->
+  <section id="movement" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">The Movement</h2>
+    <p class="mt-4 max-w-2xl mx-auto">Our brand story, mission, and cultural roots in NYC streetwear.</p>
+  </section>
+
+  <!-- Journal -->
+  <section id="journal" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Journal</h2>
+    <p class="mt-4">Culture blog, collabs, and behind-the-scenes drops.</p>
+  </section>
+
+  <!-- B2B Wholesale -->
+  <section id="wholesale" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">B2B Wholesale</h2>
+    <p class="mt-4">Retailer portal, line sheets, and bulk ordering info.</p>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Contact Us</h2>
+    <form class="max-w-md mx-auto mt-6 space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 text-black rounded" />
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 text-black rounded" />
+      <textarea placeholder="Your Message" class="w-full px-4 py-2 text-black rounded h-32"></textarea>
+      <button class="w-full px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Send</button>
+    </form>
+    <p class="mt-6">📍 New York City</p>
+    <p>📧 contact@gofigurego.com</p>
+    <p>📱 Follow us on Instagram: 
+      <a href="https://www.instagram.com/gofiguremore" target="_blank" class="underline text-green-400 hover:text-white">@gofiguremore</a>
+    </p>
   </section>
 
   <!-- Cart Section -->
@@ -125,3 +147,4 @@
   </footer>
 </body>
 </html>
+
