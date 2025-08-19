@@ -6,119 +6,92 @@
   <title>Go Figure Go</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0px green; }
-      50% { box-shadow: 0 0 20px green; }
-      100% { box-shadow: 0 0 0px green; }
+    body {
+      background: url('https://i.imgur.com/yourGraffitiImage.jpg') no-repeat center center fixed;
+      background-size: cover;
+      border: 10px solid #39ff14;
+      box-shadow: 0 0 40px #39ff14 inset;
     }
-    .glow {
-      animation: pulseGlow 2s infinite;
+    .glow-text {
+      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
     }
   </style>
 </head>
-<body class="bg-black text-green-400 font-sans scroll-smooth">
+<body class="text-white font-sans">
 
-  <!-- Cover Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-black">
-    <div class="bg-black bg-opacity-60 p-6 rounded">
-      <h1 class="text-5xl font-bold mb-4 glow">Go Figure Go</h1>
-      <p class="text-lg max-w-xl mb-6">
-        Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
-      </p>
-      <a href="#collection" class="bg-green-400 text-black px-6 py-3 rounded hover:bg-green-300 transition">Explore Collection</a>
-    </div>
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-6xl font-bold glow-text">Go Figure Go</h1>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">
+      Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
+    </p>
+    <button class="mt-6 px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Explore Collection</button>
+  </header>
+  <!-- Countdown -->
+  <section class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Next Drop Countdown</h2>
+    <p class="mt-2 text-lg">Get ready for the next release</p>
+    <div class="mt-4 text-5xl font-mono glow-text">03:14:56:22</div>
   </section>
 
-  <!-- Countdown Section -->
-  <section class="bg-black text-green-400 py-8 text-center">
-    <h2 class="text-3xl font-bold mb-2">Next Drop Countdown</h2>
-    <p class="text-lg mb-4">Get ready for the next release</p>
-    <div id="countdown" class="text-2xl font-mono"></div>
-  </section>
-
-  <!-- BLM Tribute Section -->
-  <section class="bg-black text-white py-16 px-6 text-center">
-    <h2 class="text-4xl font-bold mb-4">✊🏽 Black Lives Matter</h2>
-    <p class="max-w-2xl mx-auto text-lg mb-6">
+  <!-- Black Lives Matter -->
+  <section class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold">✊🏽 Black Lives Matter</h2>
+    <p class="mt-4 max-w-2xl mx-auto">
       Go Figure Go stands in solidarity with the movement for justice, equality, and empowerment. Our designs honor the legacy of Black leaders and the resilience of our communities.
     </p>
-    <div class="flex justify-center gap-4">
-      <span class="bg-red-600 px-4 py-2 rounded text-white font-bold">Justice</span>
-      <span class="bg-green-600 px-4 py-2 rounded text-white font-bold">Unity</span>
-      <span class="bg-yellow-400 px-4 py-2 rounded text-black font-bold">Power</span>
+    <div class="mt-6 flex justify-center gap-4">
+      <span class="px-4 py-2 bg-red-600 rounded-full font-bold">Justice</span>
+      <span class="px-4 py-2 bg-green-600 rounded-full font-bold">Unity</span>
+      <span class="px-4 py-2 bg-yellow-400 rounded-full font-bold">Power</span>
     </div>
   </section>
-
-  <!-- Merchandise Section -->
-  <section id="collection" class="bg-gradient-to-r from-black via-gray-900 to-black text-green-400 py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Streetwear Collection</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+  <!-- Product Grid -->
+  <section class="py-10 text-center">
+    <h2 class="text-4xl font-bold glow-text mb-8">Streetwear Collection</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
       <!-- Hoodie -->
-      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">Go Figure Hoodie</h3>
-        <p class="text-sm mb-4">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
-        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-hoodie" />
-        <button onclick="addToCart('Go Figure Hoodie', 'qty-hoodie')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
+        <h3 class="text-xl font-bold mb-2">Go Figure Hoodie</h3>
+        <p class="mb-4">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
+        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
+        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
+
       <!-- MLK Long Sleeve -->
-      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">MLK Long Sleeve</h3>
-        <p class="text-sm mb-4">From the Black History Collection. Featuring Martin Luther King Jr. in collaboration with Kate B.</p>
-        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-mlk" />
-        <button onclick="addToCart('MLK Long Sleeve', 'qty-mlk')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
+        <h3 class="text-xl font-bold mb-2">MLK Long Sleeve</h3>
+        <p class="mb-4">From our Black History Collection. Collab with Kate B & MLK Jr.</p>
+        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
+        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
-      <!-- Tee -->
-      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
-        <h3 class="text-2xl font-semibold mb-2">Go Figure Tee</h3>
-        <p class="text-sm mb-4">Off-white streetwear tee with signature patch. Minimal design, maximum impact.</p>
-        <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-tee" />
-        <button onclick="addToCart('Go Figure Tee', 'qty-tee')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
+
+      <!-- Go Figure Tee -->
+      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
+        <h3 class="text-xl font-bold mb-2">Go Figure Tee</h3>
+        <p class="mb-4">Off-white streetwear tee with signature patch and minimal design.</p>
+        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
+        <button class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
       </div>
     </div>
-  </section>
-
-  <!-- Waitlist Modal Trigger -->
-  <section class="text-center py-8 bg-black text-green-400">
-    <button onclick="document.getElementById('waitlist-modal').classList.remove('hidden')" class="underline hover:text-green-300">Join the Waitlist</button>
   </section>
 
   <!-- Waitlist Modal -->
-  <div id="waitlist-modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
-    <div class="bg-white text-black p-6 rounded max-w-md w-full">
-      <h3 class="text-xl font-bold mb-4">Get Early Access</h3>
-      <input type="email" placeholder="Your email" class="w-full p-2 mb-4 border rounded" />
-      <button class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300">Join</button>
-      <button onclick="document.getElementById('waitlist-modal').classList.add('hidden')" class="mt-4 text-sm underline">Close</button>
+  <section class="text-center py-10">
+    <button onclick="document.getElementById('waitlistModal').style.display='block'" class="px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Join the Waitlist</button>
+    <div id="waitlistModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
+      <div class="bg-white p-8 rounded-lg text-black max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-4">Get Early Access</h2>
+        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 border rounded mb-4" />
+        <button class="px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Join</button>
+        <button onclick="document.getElementById('waitlistModal').style.display='none'" class="mt-4 text-sm text-gray-600 hover:underline">Close</button>
+      </div>
     </div>
-  </div>
-
-  <!-- Contact Section -->
-  <section class="bg-black text-green-400 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-6">Stay Connected</h2>
-    <form action="#" method="POST" class="max-w-md mx-auto">
-      <input type="email" name="email" placeholder="Your email" required class="w-full p-3 rounded mb-4 text-black" />
-      <button type="submit" class="w-full bg-green-400 text-black py-3 rounded hover:bg-green-300 transition">
-        Subscribe & Get 10% Off
-      </button>
-    </form>
-    <p class="text-center mt-6 text-sm">
-      Follow us on <a href="https://www.instagram.com/gofiguremore/" class="underline hover:text-green-300">Instagram @gofiguremore</a>
-    </p>
   </section>
 
-  <!-- Cart Sidebar -->
-  <div id="cart" class="fixed bottom-4 right-4 bg-black text-green-400 p-4 rounded shadow-lg max-w-xs w-full z-40">
-    <h4 class="font-bold mb-2">Your Cart</h4>
-    <ul id="cart-items" class="text-sm list-disc pl-4 mb-2"></ul>
-    <p class="text-sm font-semibold">Total Items: <span id="cart-total">0</span></p>
-    <button onclick="checkout()" class="mt-4 w-full bg-green-400 text-black py-2 rounded hover:bg-green-300 transition">Checkout</button>
-  </div>
-
   <!-- Footer -->
-  <footer class="bg-black text-green-400 text-center py-6 text-sm">
+  <footer class="text-center py-6 text-sm text-white bg-black bg-opacity-80">
     &copy; 2025 Go Figure Go. All rights reserved.
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    const cartItems =
+</body>
+</html>
