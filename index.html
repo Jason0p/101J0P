@@ -11,8 +11,23 @@
       border: 10px solid #39ff14;
       box-shadow: 0 0 40px #39ff14 inset;
     }
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      }
+      50% {
+        text-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
+      }
+    }
     .glow-text {
-      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+      animation: pulseGlow 2s infinite;
+    }
+    @keyframes flashCart {
+      0% { background-color: #39ff14; color: black; }
+      100% { background-color: transparent; color: white; }
+    }
+    .cart-item-added {
+      animation: flashCart 0.5s ease-in-out;
     }
   </style>
 </head>
@@ -108,7 +123,7 @@
       for (const [item, qty] of Object.entries(cart)) {
         total += qty;
         cartDisplay.innerHTML += `
-          <div class="mb-4 border-b border-green-400 pb-2">
+          <div class="mb-4 border-b border-green-400 pb-2 cart-item-added">
             <p class="font-bold">${item}</p>
             <p>Qty: ${qty}</p>
             <button onclick="removeFromCart('${item}')" class="mt-1 px-2 py-1 bg-red-600 text-white rounded">Remove</button>
