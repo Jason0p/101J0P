@@ -9,162 +9,73 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
-      background-image: repeating-linear-gradient(
-        45deg,
-        rgba(57, 255, 20, 0.03) 0px,
-        rgba(57, 255, 20, 0.03) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-      border: 10px solid #39ff14;
-      box-shadow: 0 0 40px #39ff14 inset;
+      background-color: #000;
     }
-
-    h1, h2, h3 {
-      font-family: 'Helvetica Neue', 'Neue Haas Grotesk Display Pro', sans-serif;
+    .nav-link:hover {
+      color: #39ff14;
     }
-
-    .glow-text {
-      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-    }
-
-    .btn-glow {
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #39ff14;
-    }
-
-    .btn-glow:hover {
+    .instagram-link {
       background-color: #39ff14;
       color: #000;
-      box-shadow: 0 0 20px #39ff14;
-    }
-
-    .instagram-badge {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #39ff14;
-      color: #000;
-      padding: 10px 16px;
+      padding: 8px 16px;
       font-weight: bold;
       border-radius: 9999px;
       box-shadow: 0 0 10px #39ff14;
       transition: all 0.3s ease;
-      z-index: 50;
     }
-
-    .instagram-badge:hover {
+    .instagram-link:hover {
       background-color: #000;
       color: #39ff14;
-      box-shadow: 0 0 20px #39ff14;
       border: 2px solid #39ff14;
     }
   </style>
 </head>
 <body class="text-white">
 
-  <!-- Instagram Badge -->
-  <a href="https://www.instagram.com/gofigurego" target="_blank" class="instagram-badge">
-    @gofigurego
-  </a>
-
-  <!-- Header -->
-  <header class="text-center py-16 px-6">
-    <h1 class="text-6xl font-extrabold glow-text tracking-tight">Go Figure Go</h1>
-    <p class="mt-6 text-lg max-w-2xl mx-auto leading-relaxed">
-      <span class="text-green-400 font-semibold">Do the Impossible, go figure.</span><br />
-      Go Figure Go is a rising NYC streetwear brand blending athletic grit with casual rebellion. Since Feb 2024, we've dropped bold collections — starting with our Black History tribute featuring MLK Jr., designed by Quincy and Russian artist Kate B.
-    </p>
-    <button class="mt-8 px-6 py-3 border border-green-400 text-green-400 font-bold rounded btn-glow">
-      Explore Collection
-    </button>
+  <!-- Header Navigation -->
+  <header class="flex justify-between items-center px-6 py-4 border-b border-green-400">
+    <h1 class="text-2xl font-bold">Go Figure Go</h1>
+    <nav class="flex gap-6 text-lg font-semibold">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#shop" class="nav-link">Shop</a>
+      <a href="#contact" class="nav-link">Contact Us</a>
+    </nav>
   </header>
 
-  <!-- Coming Soon -->
-  <section class="text-center py-16 bg-black bg-opacity-80">
-    <h2 class="text-4xl font-bold glow-text">Next Drop</h2>
-    <p class="mt-4 text-lg italic text-gray-300">Coming Soon. Stay locked in.</p>
-  </section>
+  <!-- Instagram Badge -->
+  <div class="fixed top-6 right-6 z-50">
+    <a href="https://www.instagram.com/gofigurego" target="_blank" class="instagram-link">
+      @gofigurego
+    </a>
+  </div>
 
-  <!-- Black Lives Matter -->
-  <section class="text-center py-16 bg-black bg-opacity-70">
-    <h2 class="text-4xl font-bold glow-text">✊🏽 Black Lives Matter</h2>
-    <p class="mt-6 max-w-2xl mx-auto leading-relaxed">
-      We stand with the movement for justice, equality, and empowerment. Our designs honor Black leaders and the resilience of our communities.
+  <!-- About Section -->
+  <section id="about" class="text-center py-16 px-6">
+    <h2 class="text-4xl font-bold mb-4">About</h2>
+    <p class="max-w-2xl mx-auto text-lg leading-relaxed">
+      Go Figure Go is a NYC-born streetwear brand blending athletic grit with cultural expression. We design bold, movement-driven fashion rooted in community and creativity.
     </p>
-    <div class="mt-8 flex justify-center gap-4">
-      <span class="px-4 py-2 bg-red-600 rounded-full font-bold">Justice</span>
-      <span class="px-4 py-2 bg-green-600 rounded-full font-bold">Unity</span>
-      <span class="px-4 py-2 bg-yellow-400 rounded-full font-bold">Power</span>
-    </div>
   </section>
 
-  <!-- Product Grid -->
-  <section class="py-16 text-center">
-    <h2 class="text-4xl font-bold glow-text mb-10">Streetwear Collection</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-      <!-- Hoodie -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">Go Figure Hoodie</h3>
-        <p class="mb-4 text-sm text-gray-300">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('Go Figure Hoodie')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
-
-      <!-- MLK Long Sleeve -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">MLK Long Sleeve</h3>
-        <p class="mb-4 text-sm text-gray-300">From our Black History Collection. Collab with Kate B & MLK Jr.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('MLK Long Sleeve')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
-
-      <!-- Go Figure Tee -->
-      <div class="border border-green-400 p-6 rounded-lg bg-black bg-opacity-70">
-        <h3 class="text-xl font-bold mb-2">Go Figure Tee</h3>
-        <p class="mb-4 text-sm text-gray-300">Off-white streetwear tee with signature patch and minimal design.</p>
-        <input type="number" value="1" min="1" class="w-16 text-black px-2 py-1 rounded" />
-        <button onclick="addToCart('Go Figure Tee')" class="mt-2 px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Add to Cart</button>
-      </div>
-    </div>
+  <!-- Shop Section -->
+  <section id="shop" class="text-center py-16 px-6 border-t border-green-400">
+    <h2 class="text-4xl font-bold mb-4">Shop</h2>
+    <p class="max-w-xl mx-auto text-lg leading-relaxed">
+      Our latest drops feature hoodies, tees, and long sleeves inspired by urban life and social justice. Stay tuned for the next release.
+    </p>
   </section>
 
-  <!-- Cart Section -->
-  <section class="py-16 text-center bg-black bg-opacity-80">
-    <h2 class="text-3xl font-bold glow-text mb-6">Your Cart</h2>
-    <div id="cartDisplay" class="max-w-xl mx-auto text-left"></div>
-    <p id="cartTotal" class="mt-4 font-bold">Total Items: 0</p>
-    <button class="mt-4 px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Checkout</button>
+  <!-- Contact Section -->
+  <section id="contact" class="text-center py-16 px-6 border-t border-green-400">
+    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+    <p class="text-lg">📧 contact@gofigurego.com</p>
+    <p class="mt-2 text-lg">📍 New York City</p>
   </section>
 
-  <!-- Cart Script -->
-  <script>
-    const cart = {};
-    function addToCart(itemName) {
-      const input = event.target.parentElement.querySelector('input');
-      const qty = parseInt(input.value);
-      if (!qty || qty < 1) return;
-      cart[itemName] = (cart[itemName] || 0) + qty;
-      updateCartUI();
-    }
-
-    function removeFromCart(itemName) {
-      delete cart[itemName];
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const cartDisplay = document.getElementById('cartDisplay');
-      const cartTotal = document.getElementById('cartTotal');
-      cartDisplay.innerHTML = '';
-      let total = 0;
-      for (const [item, qty] of Object.entries(cart)) {
-        total += qty;
-        cartDisplay.innerHTML += `
-          <div class="mb-4 border-b border-green-400 pb-2">
-            <p class="font-bold">${item}</p>
-            <p>Qty: ${qty}</p>
-            <button onclick="removeFromCart('${item}
-
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white border-t border-green-400">
+    &copy; 2025 Go Figure Go. All rights reserved.
+  </footer>
+</body>
+</html>
 
