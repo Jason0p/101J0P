@@ -5,18 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Figure Go</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0px green; }
+      50% { box-shadow: 0 0 20px green; }
+      100% { box-shadow: 0 0 0px green; }
+    }
+    .glow {
+      animation: pulseGlow 2s infinite;
+    }
+  </style>
 </head>
 <body class="bg-black text-green-400 font-sans scroll-smooth">
 
   <!-- Cover Section -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-black">
     <div class="bg-black bg-opacity-60 p-6 rounded">
-      <h1 class="text-5xl font-bold mb-4">Go Figure Go</h1>
+      <h1 class="text-5xl font-bold mb-4 glow">Go Figure Go</h1>
       <p class="text-lg max-w-xl mb-6">
         Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
       </p>
       <a href="#collection" class="bg-green-400 text-black px-6 py-3 rounded hover:bg-green-300 transition">Explore Collection</a>
     </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section class="bg-black text-green-400 py-8 text-center">
+    <h2 class="text-3xl font-bold mb-2">Next Drop Countdown</h2>
+    <p class="text-lg mb-4">Get ready for the next release</p>
+    <div id="countdown" class="text-2xl font-mono"></div>
   </section>
 
   <!-- BLM Tribute Section -->
@@ -60,13 +77,20 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="bg-white text-black py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-6 text-green-600">About Us</h2>
-    <p class="max-w-3xl mx-auto text-center text-lg">
-      Go Figure Go is built for inner-city communities—designed for swag and comfort. Our mission is to become internationally known and offer a wide variety of styles for every occasion. We believe fashion should speak boldly and move freely.
-    </p>
+  <!-- Waitlist Modal Trigger -->
+  <section class="text-center py-8 bg-black text-green-400">
+    <button onclick="document.getElementById('waitlist-modal').classList.remove('hidden')" class="underline hover:text-green-300">Join the Waitlist</button>
   </section>
+
+  <!-- Waitlist Modal -->
+  <div id="waitlist-modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+    <div class="bg-white text-black p-6 rounded max-w-md w-full">
+      <h3 class="text-xl font-bold mb-4">Get Early Access</h3>
+      <input type="email" placeholder="Your email" class="w-full p-2 mb-4 border rounded" />
+      <button class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300">Join</button>
+      <button onclick="document.getElementById('waitlist-modal').classList.add('hidden')" class="mt-4 text-sm underline">Close</button>
+    </div>
+  </div>
 
   <!-- Contact Section -->
   <section class="bg-black text-green-400 py-16 px-6">
@@ -83,7 +107,7 @@
   </section>
 
   <!-- Cart Sidebar -->
-  <div id="cart" class="fixed bottom-4 right-4 bg-black text-green-400 p-4 rounded shadow-lg max-w-xs w-full">
+  <div id="cart" class="fixed bottom-4 right-4 bg-black text-green-400 p-4 rounded shadow-lg max-w-xs w-full z-40">
     <h4 class="font-bold mb-2">Your Cart</h4>
     <ul id="cart-items" class="text-sm list-disc pl-4 mb-2"></ul>
     <p class="text-sm font-semibold">Total Items: <span id="cart-total">0</span></p>
@@ -95,36 +119,6 @@
     &copy; 2025 Go Figure Go. All rights reserved.
   </footer>
 
-  <!-- Cart Script -->
+  <!-- Scripts -->
   <script>
-    const cartItems = [];
-
-    function addToCart(item, qtyId) {
-      const qty = parseInt(document.getElementById(qtyId).value);
-      for (let i = 0; i < qty; i++) {
-        cartItems.push(item);
-      }
-      updateCart();
-    }
-
-    function removeFromCart(index) {
-      cartItems.splice(index, 1);
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartList = document.getElementById('cart-items');
-      cartList.innerHTML = cartItems.map((item, index) =>
-        `<li>${item} <button onclick="removeFromCart(${index})" class="ml-2 text-red-500 hover:underline">Remove</button></li>`
-      ).join('');
-      document.getElementById('cart-total').textContent = cartItems.length;
-    }
-
-    function checkout() {
-      alert("Checkout is coming soon. Stay tuned!");
-    }
-  </script>
-
-</body>
-</html>
-
+    const cartItems =
