@@ -5,22 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Figure Go</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #000;
       border: 10px solid #39ff14;
-      box-shadow: 0 0 40px #39ff14 inset;
+      box-shadow: 0 0 30px #39ff14 inset;
+      font-family: 'Inter', sans-serif;
     }
-    @keyframes pulseGlow {
-      0%, 100% {
-        text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-      }
-      50% {
-        text-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
-      }
+    h1, h2, h3 {
+      font-family: 'Oswald', sans-serif;
     }
     .glow-text {
-      animation: pulseGlow 2s infinite;
+      text-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
     }
     @keyframes flashCart {
       0% { background-color: #39ff14; color: black; }
@@ -31,12 +28,12 @@
     }
   </style>
 </head>
-<body class="text-white font-sans">
+<body class="text-white">
 
   <!-- Header -->
   <header class="text-center py-10">
     <h1 class="text-6xl font-bold glow-text">Go Figure Go</h1>
-    <p class="mt-4 text-lg max-w-2xl mx-auto">
+    <p class="mt-4 text-lg max-w-2xl mx-auto leading-relaxed">
       Do the Impossible, go figure. Go Figure Go is a clothing brand from New York City on the rise. We design streetwear with glimpses of athletic and casual style. Since February 2024, we've been releasing collections that make bold fashion statements—starting with our Black History drop featuring Martin Luther King Jr., a collaboration between Quincy (CEO/Designer) and Russian artist Kate B.
     </p>
     <button class="mt-6 px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Explore Collection</button>
@@ -51,7 +48,7 @@
   <!-- Black Lives Matter -->
   <section class="text-center py-10 bg-black bg-opacity-70">
     <h2 class="text-4xl font-bold">✊🏽 Black Lives Matter</h2>
-    <p class="mt-4 max-w-2xl mx-auto">
+    <p class="mt-4 max-w-2xl mx-auto leading-relaxed">
       Go Figure Go stands in solidarity with the movement for justice, equality, and empowerment. Our designs honor the legacy of Black leaders and the resilience of our communities.
     </p>
     <div class="mt-6 flex justify-center gap-4">
