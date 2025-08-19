@@ -5,77 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Figure Go</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       background-color: #000;
+      border: 10px solid #39ff14;
+      box-shadow: 0 0 40px #39ff14 inset;
     }
-    .nav-link:hover {
+    .glow-text {
+      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    }
+    nav a:hover {
       color: #39ff14;
-    }
-    .instagram-link {
-      background-color: #39ff14;
-      color: #000;
-      padding: 8px 16px;
-      font-weight: bold;
-      border-radius: 9999px;
-      box-shadow: 0 0 10px #39ff14;
-      transition: all 0.3s ease;
-    }
-    .instagram-link:hover {
-      background-color: #000;
-      color: #39ff14;
-      border: 2px solid #39ff14;
     }
   </style>
 </head>
-<body class="text-white">
+<body class="text-white font-sans">
 
-  <!-- Header Navigation -->
-  <header class="flex justify-between items-center px-6 py-4 border-b border-green-400">
-    <h1 class="text-2xl font-bold">Go Figure Go</h1>
-    <nav class="flex gap-6 text-lg font-semibold">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#shop" class="nav-link">Shop</a>
-      <a href="#contact" class="nav-link">Contact Us</a>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav class="flex flex-wrap justify-center gap-6 py-6 text-lg font-bold bg-black bg-opacity-90">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#product-detail">Product Detail</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#movement">The Movement</a>
+    <a href="#journal">Journal</a>
+    <a href="#wholesale">B2B Wholesale</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
 
-  <!-- Instagram Badge -->
-  <div class="fixed top-6 right-6 z-50">
-    <a href="https://www.instagram.com/gofigurego" target="_blank" class="instagram-link">
-      @gofigurego
-    </a>
-  </div>
+  <!-- Home -->
+  <section id="home" class="text-center py-10">
+    <h1 class="text-6xl font-bold glow-text">Go Figure Go</h1>
+    <p class="mt-4 text-lg max-w-2xl mx-auto">Do the Impossible, go figure. NYC streetwear built for movement, culture, and impact.</p>
+    <button class="mt-6 px-6 py-2 bg-black border border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition">Explore Collection</button>
+  </section>
 
-  <!-- About Section -->
-  <section id="about" class="text-center py-16 px-6">
-    <h2 class="text-4xl font-bold mb-4">About</h2>
-    <p class="max-w-2xl mx-auto text-lg leading-relaxed">
-      Go Figure Go is a NYC-born streetwear brand blending athletic grit with cultural expression. We design bold, movement-driven fashion rooted in community and creativity.
+  <!-- Coming Soon -->
+  <section class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">Next Drop</h2>
+    <p class="mt-2 text-lg">Coming Soon</p>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Shop</h2>
+    <p class="mt-4">Product listing and filtering will be added here.</p>
+  </section>
+
+  <!-- Product Detail -->
+  <section id="product-detail" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">Product Detail</h2>
+    <p class="mt-4">Descriptions, sizing, and reviews go here.</p>
+  </section>
+
+  <!-- Lookbook -->
+  <section id="lookbook" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Lookbook</h2>
+    <p class="mt-4">Editorial-style photos and styling inspiration.</p>
+  </section>
+
+  <!-- The Movement -->
+  <section id="movement" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">The Movement</h2>
+    <p class="mt-4 max-w-2xl mx-auto">Our brand story, mission, and cultural roots in NYC streetwear.</p>
+  </section>
+
+  <!-- Journal -->
+  <section id="journal" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Journal</h2>
+    <p class="mt-4">Culture blog, collabs, and behind-the-scenes drops.</p>
+  </section>
+
+  <!-- B2B Wholesale -->
+  <section id="wholesale" class="text-center py-10 bg-black bg-opacity-70">
+    <h2 class="text-4xl font-bold glow-text">B2B Wholesale</h2>
+    <p class="mt-4">Retailer portal, line sheets, and bulk ordering info.</p>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="text-center py-10">
+    <h2 class="text-4xl font-bold glow-text">Contact Us</h2>
+    <form class="max-w-md mx-auto mt-6 space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 text-black rounded" />
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 text-black rounded" />
+      <textarea placeholder="Your Message" class="w-full px-4 py-2 text-black rounded h-32"></textarea>
+      <button class="w-full px-4 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Send</button>
+    </form>
+    <p class="mt-6">📍 New York City</p>
+    <p>📧 contact@gofigurego.com</p>
+    <p>📱 Follow us on Instagram: 
+      <a href="https://www.instagram.com/gofiguremore" target="_blank" class="underline text-green-400 hover:text-white">@gofiguremore</a>
     </p>
   </section>
 
-  <!-- Shop Section -->
-  <section id="shop" class="text-center py-16 px-6 border-t border-green-400">
-    <h2 class="text-4xl font-bold mb-4">Shop</h2>
-    <p class="max-w-xl mx-auto text-lg leading-relaxed">
-      Our latest drops feature hoodies, tees, and long sleeves inspired by urban life and social justice. Stay tuned for the next release.
-    </p>
+  <!-- Cart Section -->
+  <section class="py-10 text-center bg-black bg-opacity-80">
+    <h2 class="text-3xl font-bold glow-text mb-4">Your Cart</h2>
+    <div id="cartDisplay" class="max-w-xl mx-auto text-left"></div>
+    <p id="cartTotal" class="mt-4 font-bold">Total Items: 0</p>
+    <button class="mt-4 px-6 py-2 bg-green-400 text-black font-bold rounded hover:bg-green-300">Checkout</button>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="text-center py-16 px-6 border-t border-green-400">
-    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-    <p class="text-lg">📧 contact@gofigurego.com</p>
-    <p class="mt-2 text-lg">📍 New York City</p>
-  </section>
+  <!-- Cart Script -->
+  <script>
+    const cart = {};
+    function addToCart(itemName) {
+      const input = event.target.parentElement.querySelector('input');
+      const qty = parseInt(input.value);
+      if (!qty || qty < 1) return;
+      cart[itemName] = (cart[itemName] || 0) + qty;
+      updateCartUI();
+    }
+
+    function removeFromCart(itemName) {
+      delete cart[itemName];
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartDisplay = document.getElementById('cartDisplay');
+      const cartTotal = document.getElementById('cartTotal');
+      cartDisplay.innerHTML = '';
+      let total = 0;
+      for (const [item, qty] of Object.entries(cart)) {
+        total += qty;
+        cartDisplay.innerHTML += `
+          <div class="mb-4 border-b border-green-400 pb-2">
+            <p class="font-bold">${item}</p>
+            <p>Qty: ${qty}</p>
+            <button onclick="removeFromCart('${item}')" class="mt-1 px-2 py-1 bg-red-600 text-white rounded">Remove</button>
+          </div>
+        `;
+      }
+      cartTotal.textContent = 'Total Items: ' + total;
+    }
+  </script>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-sm text-white border-t border-green-400">
+  <footer class="text-center py-6 text-sm text-white bg-black bg-opacity-80">
     &copy; 2025 Go Figure Go. All rights reserved.
   </footer>
 </body>
 </html>
+
 
