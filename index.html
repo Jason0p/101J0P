@@ -9,7 +9,7 @@
 <body class="bg-black text-green-400 font-sans scroll-smooth">
 
   <!-- Cover Section -->
-  <section class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-6" style="background-image: url('/images/Uv73fiJF9s7Mani3mWLER.jpeg');">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-black">
     <div class="bg-black bg-opacity-60 p-6 rounded">
       <h1 class="text-5xl font-bold mb-4">Go Figure Go</h1>
       <p class="text-lg max-w-xl mb-6">
@@ -19,30 +19,40 @@
     </div>
   </section>
 
+  <!-- BLM Tribute Section -->
+  <section class="bg-black text-white py-16 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-4">✊🏽 Black Lives Matter</h2>
+    <p class="max-w-2xl mx-auto text-lg mb-6">
+      Go Figure Go stands in solidarity with the movement for justice, equality, and empowerment. Our designs honor the legacy of Black leaders and the resilience of our communities.
+    </p>
+    <div class="flex justify-center gap-4">
+      <span class="bg-red-600 px-4 py-2 rounded text-white font-bold">Justice</span>
+      <span class="bg-green-600 px-4 py-2 rounded text-white font-bold">Unity</span>
+      <span class="bg-yellow-400 px-4 py-2 rounded text-black font-bold">Power</span>
+    </div>
+  </section>
+
   <!-- Merchandise Section -->
-  <section id="collection" class="bg-white text-black py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10 text-green-600">Streetwear Collection</h2>
+  <section id="collection" class="bg-gradient-to-r from-black via-gray-900 to-black text-green-400 py-16 px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Streetwear Collection</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Hoodie -->
-      <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="/images/KgCtJg64Yh1JhxxiUx7GJ.jpeg" alt="Go Figure Hoodie" class="w-full h-64 object-cover mb-4 rounded" />
-        <h3 class="text-xl font-semibold mb-2">Go Figure Hoodie</h3>
-        <p class="text-sm mb-4">Premium cotton hoodie designed for comfort and statement. Inner-city inspired, built for movement.</p>
+      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-2">Go Figure Hoodie</h3>
+        <p class="text-sm mb-4">Premium cotton hoodie. Inner-city inspired, built for movement.</p>
         <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-hoodie" />
         <button onclick="addToCart('Go Figure Hoodie', 'qty-hoodie')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
       </div>
       <!-- MLK Long Sleeve -->
-      <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="/images/47UdYgKJWjMyHsMpVC2gQ.jpeg" alt="MLK Long Sleeve" class="w-full h-64 object-cover mb-4 rounded" />
-        <h3 class="text-xl font-semibold mb-2">MLK Long Sleeve</h3>
+      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-2">MLK Long Sleeve</h3>
         <p class="text-sm mb-4">From the Black History Collection. Featuring Martin Luther King Jr. in collaboration with Kate B.</p>
         <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-mlk" />
         <button onclick="addToCart('MLK Long Sleeve', 'qty-mlk')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
       </div>
       <!-- Tee -->
-      <div class="border p-4 rounded shadow hover:shadow-lg transition text-green-600">
-        <img src="/images/hFDMFLjFat28ygx15v3a1.png" alt="Go Figure Tee" class="w-full h-64 object-cover mb-4 rounded" />
-        <h3 class="text-xl font-semibold mb-2">Go Figure Tee</h3>
+      <div class="border border-green-400 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold mb-2">Go Figure Tee</h3>
         <p class="text-sm mb-4">Off-white streetwear tee with signature patch. Minimal design, maximum impact.</p>
         <input type="number" min="1" value="1" class="w-16 mb-2 p-1 border rounded text-black" id="qty-tee" />
         <button onclick="addToCart('Go Figure Tee', 'qty-tee')" class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">Add to Cart</button>
@@ -117,3 +127,4 @@
 
 </body>
 </html>
+
